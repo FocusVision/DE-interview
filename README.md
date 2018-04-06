@@ -1,14 +1,10 @@
 # Setup
-- Install virtualenv: `pip install virtualenv` (may need to run with sudo)
-- Create a virtualenv: `virtualenv venv`
-- Start the virtualenv: `source venv/bin/activate`
-- Install dependencies: `pip install -r requirements.txt`
-- Start up the server: `export FLASK_APP=todo/__init__.py FLASK_DEBUG=1 && flask run`
+- Run `make install` to setup your virtualenv and install all the dependencies
+- Run `make run` to start up the app on localhost:8000
 
 
 # Running Unit Tests
-- Make sure your virtualenv is running
-- From the project directory run `python -m unittest discover`
+- `make test`
 
 
 # Tips
