@@ -2,11 +2,11 @@ import os
 
 from flask import Flask, send_from_directory
 
-from todoapp.api import api
+from todo import api
 
 
 app = Flask(__name__)
-app.register_blueprint(api)
+app.register_blueprint(api.api)
 
 if int(os.environ.get('FLASK_DEBUG', 0)):
     # production would serve static files from nginx/apache webserver

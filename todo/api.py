@@ -7,12 +7,12 @@ api = Blueprint('api', __name__, url_prefix='/api/todo/v1')
 tasks = [
     {
         'id': 1,
-        'note': 'Write unit tests',
+        'note': 'Buy Milk',
         'done': False
     },
     {
         'id': 2,
-        'note': 'Move task store from memeory to db',
+        'note': 'Pick up laundry',
         'done': False
     }
 ]

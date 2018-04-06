@@ -3,7 +3,12 @@
 - Create a virtualenv: `virtualenv venv`
 - Start the virtualenv: `source venv/bin/activate`
 - Install dependencies: `pip install -r requirements.txt`
-- Start up the server: `export FLASK_APP=todoapp FLASK_DEBUG=1 && flask run`
+- Start up the server: `export FLASK_APP=todo FLASK_DEBUG=1 && flask run`
+
+
+# Running Unit Tests
+- Make sure your virtualenv is running
+- From the project directory run `python -m unittest discover`
 
 
 # Tips
