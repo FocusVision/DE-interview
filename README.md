@@ -1,5 +1,5 @@
 # Setup
-- Instal virtualenve: `pip install virtualenv` (may need to run with sudo)
+- Install virtualenv: `pip install virtualenv` (may need to run with sudo)
 - Create a virtualenv: `virtualenv venv`
 - Start the virtualenv: `source venv/bin/activate`
 - Install dependencies: `pip install -r requirements.txt`
