@@ -16,4 +16,7 @@ Open browser console network tab and check the `Disable cache` option otherwise
 the browser will keep returning your old static files.
 
 
-The app should be running in your browser at localhost:8080
+# Resources
+- Flask API docs http://flask.pocoo.org/docs/0.12/api/
+- JQuery API docs https://api.jquery.com/
+- Python unittest docs https://docs.python.org/2/library/unittest.html
