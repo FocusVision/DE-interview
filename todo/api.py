@@ -13,7 +13,7 @@ tasks = [
     {
         'id': 2,
         'note': 'Pick up laundry',
-        'done': False
+        'done': True
     }
 ]
 

@@ -1,7 +1,18 @@
-input[type="checkbox"] {
-  margin-right: 5px
+h1 {
+  text-align: center;
 }
 
 form {
   margin-top: 10px;
+  max-width: 400px;
+  margin: auto;
+}
+
+input[type="checkbox"] {
+  margin-right: 5px
+}
+
+.card {
+  max-width: 400px;
+  margin: 10px auto;
 }

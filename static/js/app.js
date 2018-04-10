@@ -1,6 +1,6 @@
 (function() {
     const $TODO_LIST = $('#todo-list');
-    const $NEW_FORM = $('#new-todo'); 
+    const $NEW_TODO = $('#new-todo');
     const TodoApi = {
         _api: '/api/todo/v1',
 
@@ -31,21 +31,23 @@
     function createTodoList() {
         TodoApi.get().then(res => {
             res.tasks.forEach(task => {
-                addTodoItem(task)
+                addTodoItem(task);
             });
         });
     }
 
     function addTodoItem(task) {
-        let $task = $('<div/>');
-        let $done = $('<input/>',{
-            type: 'checkbox',
-            id: `done-${task.id}`,
-            checked: task.done
-        });
-
-        $task.text(task.note);
-        $task.prepend($done);
+        let $task = $(`
+            <div id="task-${task.id}" class="card">
+                <div class="card-body">
+                    ${task.done ? '<span class="badge badge-success">Done</span>' : ''}
+                    <p class="card-text"></p>
+                    <button id="delete-${task.id}" class="btn btn-sm btn-danger">Delete</button>
+                    ${task.done ? '' : '<button id="complete-${task.id}" class="btn btn-sm btn-primary">Complete</button>'}
+                </div>
+            </div>
+        `);
+        $task.find('.card-text').text(task.note);
         $TODO_LIST.append($task);
     }
 
@@ -61,7 +63,7 @@
     }
     
     function bootstrap() {
-        $NEW_FORM.submit(handleSubmit);
+        $NEW_TODO.submit(handleSubmit);
         createTodoList();
     }
 

@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="/css/style.css"/>
 </head>
 <body>
-  <div id="app">
-    <h1>TODO</h1>
+  <div id="app" class="container-fluid">
+    <h1>Super Simple TODO</h1>
     
     <div id="todo-list">
     </div>
 
     <form id="new-todo">
-      <input type="text" name="note" placeholder="New todo item..."/>
-      <input type="submit" value="Add"/>
+      <div class="form-group">
+        <input class="form-control" type="text" name="note" placeholder="New todo item..."/>
+      </div>
+      <button class="btn btn-primary" type="submit">Add</button>
     </form>
   </div>
 
