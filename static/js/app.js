@@ -1,4 +1,6 @@
 (function() {
+    'use strict';
+
     const $TODO_LIST = $('#todo-list');
     const $NEW_TODO = $('#new-todo');
     const TodoApi = {
@@ -20,11 +22,11 @@
         },
 
         update(data) {
-            // TODO: Implement Me!
+            // TODO: Implement me!
         },
 
         delete(id) {
-            // TODO: Implement Me!
+            // TODO: Implement me!
         }
     };
 

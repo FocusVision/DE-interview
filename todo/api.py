@@ -2,7 +2,7 @@ from flask import Blueprint, jsonify, abort, request
 
 
 api = Blueprint('api', __name__, url_prefix='/api/todo/v1')
-# An in memeory store works for now. A more robust implementation would persist
+# An in memory store works for now. A more robust implementation would persist
 # the data.
 tasks = [
     {
