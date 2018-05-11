@@ -13,7 +13,7 @@
         },
 
         create(data) {
-            let url = `${this._api}/tasks`;
+            let url = `${this._api}/task`;
             return $.ajax({
                 url,
                 type: 'POST',
@@ -71,7 +71,7 @@
             $doneBadge.hide();
         }
         $deleteBtn.click(handleDelete.bind(task));
-        $task.find('.card-text').text(task.note);
+        $task.find('.card-text').html(task.not);
         $TODO_LIST.append($task);
     }
 
@@ -87,9 +87,7 @@
             .then(res => {
                 let $completeBtn = $(evt.target);
                 if (res['task'].done) {
-                    $completeBtn.hide();
                     $completeBtn.siblings('.badge-success').show();
-
                 }
             });
     }

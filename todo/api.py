@@ -4,7 +4,6 @@ from flask import Blueprint, jsonify, abort, request
 api = Blueprint('api', __name__, url_prefix='/api/todo/v1')
 # An in memory store works for now. A more robust implementation would persist
 # the data.
-NEXT_ID = 3
 TASKS = [
     {
         'id': 1,
@@ -36,16 +35,15 @@ def get_tasks():
 
 @api.route('/tasks', methods=['POST'])
 def create_task():
-    global NEXT_ID
     if not request.json or 'note' not in request.json:
         abort(400)
 
+    next_id = max([t['id'] for t in TASKS])
     new_task = {
-        'id': NEXT_ID,
+        'id': next_id,
         'note': request.json['note'],
         'done': False
     }
-    NEXT_ID += 1
     TASKS.append(new_task)
     return jsonify({'task': new_task}), 201
 
