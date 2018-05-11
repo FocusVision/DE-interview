@@ -21,7 +21,7 @@
             }); 
         },
 
-        update(data) {
+        update(id, data) {
             // TODO: Implement me!
         },
 
@@ -42,15 +42,34 @@
         let $task = $(`
             <div id="task-${task.id}" class="card">
                 <div class="card-body">
-                    ${task.done ? '<span class="badge badge-success">Done</span>' : ''}
+                    <span class="badge badge-success">Done</span>
                     <p type="text" class="card-text"></p>
                     <button id="delete-${task.id}" class="btn btn-sm btn-danger">Delete</button>
-                    ${task.done ? '' : '<button id="complete-${task.id}" class="btn btn-sm btn-primary">Complete</button>'}
+                    <button id="complete-${task.id}" class="btn btn-sm btn-primary">Complete</button>
                 </div>
             </div>
         `);
+        let $completeBtn = $task.find(`#complete-${task.id}`);
+        let $deleteBtn = $task.find(`#delete-${task.id}`);
+        let $doneBadge = $task.find('.badge-success');
+
+        if (task.done) {
+            $completeBtn.hide();
+        } else {
+            $completeBtn.click(handleComplete);
+            $doneBadge.hide();
+        }
+        $deleteBtn.click(handleDelete);
         $task.find('.card-text').text(task.note);
         $TODO_LIST.append($task);
+    }
+
+    function handleDelete(evt) {
+        // TODO: Implement me!
+    }
+
+    function handleComplete(evt) {
+        // TODO: Implement me!
     }
 
     function handleSubmit(evt) {
