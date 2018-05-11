@@ -52,11 +52,27 @@ def create_task():
 
 @api.route('/tasks/<int:task_id>', methods=['PUT'])
 def update_task(task_id):
-    # TODO: Implement me!
-    abort(501)
+    if not request.json or 'done' not in request.json:
+        abort(400)
+
+    task = [t for t in TASKS if t['id'] == task_id]
+    if not task:
+        abort(400)
+
+    task[0]['done'] = request.json['done']
+    return jsonify({'task': task[0]}), 200
 
 
 @api.route('/tasks/<int:task_id>', methods=['DELETE'])
 def remove_task(task_id):
-    # TODO: Implement me!
-    abort(501)
+    index = None
+    for i, task in enumerate(TASKS):
+        if task['id'] == task_id:
+            index = i
+            break
+
+    if index is None:
+        abort(400)
+
+    TASKS.pop(index)
+    return '', 200

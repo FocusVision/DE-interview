@@ -5,6 +5,7 @@
     const $NEW_TODO = $('#new-todo');
     const TodoApi = {
         _api: '/api/todo/v1',
+        _contentType: 'application/json',
 
         get(id) {
             let url = id ? `${this._api}/tasks/${id}` : `${this._api}/tasks`;
@@ -17,16 +18,26 @@
                 url,
                 type: 'POST',
                 data: JSON.stringify(data),
-                contentType: 'application/json'
+                contentType: this._contentType
             }); 
         },
 
         update(id, data) {
-            // TODO: Implement me!
+            let url = `${this._api}/tasks/${id}`;
+            return $.ajax({
+                url,
+                type: 'PUT',
+                data: JSON.stringify(data),
+                contentType: this._contentType
+            });
         },
 
         delete(id) {
-            // TODO: Implement me!
+            let url = `${this._api}/tasks/${id}`;
+            return $.ajax({
+                url,
+                type: 'DELETE'
+            });
         }
     };
 
@@ -56,20 +67,31 @@
         if (task.done) {
             $completeBtn.hide();
         } else {
-            $completeBtn.click(handleComplete);
+            $completeBtn.click(handleComplete.bind(task));
             $doneBadge.hide();
         }
-        $deleteBtn.click(handleDelete);
+        $deleteBtn.click(handleDelete.bind(task));
         $task.find('.card-text').text(task.note);
         $TODO_LIST.append($task);
     }
 
     function handleDelete(evt) {
-        // TODO: Implement me!
+        TodoApi.delete(this.id)
+            .then(res => {
+                $(`#task-${this.id}`).remove();
+            });
     }
 
     function handleComplete(evt) {
-        // TODO: Implement me!
+        TodoApi.update(this.id, {done: true})
+            .then(res => {
+                let $completeBtn = $(evt.target);
+                if (res['task'].done) {
+                    $completeBtn.hide();
+                    $completeBtn.siblings('.badge-success').show();
+
+                }
+            });
     }
 
     function handleSubmit(evt) {
