@@ -43,7 +43,7 @@
             <div id="task-${task.id}" class="card">
                 <div class="card-body">
                     ${task.done ? '<span class="badge badge-success">Done</span>' : ''}
-                    <p class="card-text"></p>
+                    <p type="text" class="card-text"></p>
                     <button id="delete-${task.id}" class="btn btn-sm btn-danger">Delete</button>
                     ${task.done ? '' : '<button id="complete-${task.id}" class="btn btn-sm btn-primary">Complete</button>'}
                 </div>
@@ -58,12 +58,12 @@
         let note = $(this).serializeArray()[0];
         if (note.value) {
             TodoApi.create({'note': note.value})
-                .then((res) => {
+                .then(res => {
                     addTodoItem(res['task']);
                 });
         }
     }
-    
+
     function bootstrap() {
         $NEW_TODO.submit(handleSubmit);
         createTodoList();

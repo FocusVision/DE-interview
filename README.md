@@ -9,11 +9,6 @@
 - `make test` will run the test suite located in the `test` directory
 
 
-## Tips
-Open browser console network tab and check the `Disable cache` option otherwise
-the browser will keep returning your old static files.
-
-
 ## Resources
 - Flask API docs http://flask.pocoo.org/docs/0.12/api/
 - JQuery API docs https://api.jquery.com/

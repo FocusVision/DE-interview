@@ -8,11 +8,16 @@ form {
   margin: auto;
 }
 
-input[type="checkbox"] {
-  margin-right: 5px
-}
-
 .card {
   max-width: 400px;
   margin: 10px auto;
+}
+
+.card-text {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.card-text:last-child {
+  margin-bottom: 10px;
 }

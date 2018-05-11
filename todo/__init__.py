@@ -16,12 +16,12 @@ if int(os.environ.get('FLASK_DEBUG', 0)):
 
     @app.route('/', methods=['GET'])
     def serve_index():
-        return send_from_directory(static_dir, 'index.html')
+        return send_from_directory(static_dir, 'index.html', cache_timeout=-1)
 
     @app.route('/js/<path:path>')
     def serve_js(path):
-        return send_from_directory(os.path.join(static_dir, 'js'), path)
+        return send_from_directory(os.path.join(static_dir, 'js'), path, cache_timeout=-1)
 
     @app.route('/css/<path:path>')
     def serve_css(path):
-        return send_from_directory(os.path.join(static_dir, 'css'), path)
+        return send_from_directory(os.path.join(static_dir, 'css'), path, cache_timeout=-1)
