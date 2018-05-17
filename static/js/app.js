@@ -56,7 +56,7 @@
                     <span class="badge badge-success">Done</span>
                     <p type="text" class="card-text"></p>
                     <button id="delete-${task.id}" class="btn btn-sm btn-danger">Delete</button>
-                    <button id="complete-${task.id}" class="btn btn-sm btn-primary">Complete</button>
+                    <button id="complete-${task.id}" class="btn btn-sm btn-success">Complete</button>
                 </div>
             </div>
         `);
@@ -72,7 +72,7 @@
         }
         $deleteBtn.click(handleDelete.bind(task));
         $task.find('.card-text').html(task.not);
-        $TODO_LIST.append($task);
+        $TODO_LIST.prepend($task);
     }
 
     function handleDelete(evt) {

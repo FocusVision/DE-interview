@@ -1,16 +1,42 @@
+body {
+  height: 100vh;
+  background: #F7F9FA;
+}
+
+#header {
+  background: #16253B;
+  border-image: linear-gradient(111deg, #00c753, #00d4e8) 1 100%;
+  border-image-slice: 1;
+  border-bottom: 5px solid #cbcbcb;
+  margin-bottom: 30px;
+}
+
 h1 {
-  text-align: center;
+  text-align: left;
+  font-size: 25px;
+  color: #FFF;
+  padding: 20px 0 20px 20px;
 }
 
 form {
   margin-top: 10px;
-  max-width: 400px;
+  max-width: 600px;
   margin: auto;
 }
 
+form input {
+  border-radius: 2px;
+}
+
 .card {
-  max-width: 400px;
+  max-width: 600px;
   margin: 10px auto;
+  border-color: #E4E8EB;
+  border-radius: 2px;
+}
+
+.card:first-child {
+  margin-top: 0px;
 }
 
 .card-text {
@@ -18,6 +44,33 @@ form {
   margin-bottom: 10px;
 }
 
-.card-text:last-child {
+#todo-list, #form {
+  display: inline-block
+}
+
+#todo-list {
+  height: 75vh;
+  overflow-y: scroll;
+  border-radius: 5px;
   margin-bottom: 10px;
+}
+
+.btn-primary {
+  background: #428FDB;
+  border-color: #428FDB;
+}
+
+.btn-success {
+  background: #39A84C;
+  border-color: #39A84C;
+}
+
+.btn-danger {
+  background: #F5496C;
+  border-color: #F5496C;
+}
+
+.badge-success {
+  color: #39A84C;
+  background: #CEF5D4;
 }
