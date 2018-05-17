@@ -4,18 +4,24 @@
   <link rel="stylesheet" href="/css/style.css"/>
 </head>
 <body>
-  <div id="app" class="container-fluid">
+  <div id="header">
     <h1>Super Simple TODO</h1>
-    
-    <div id="todo-list">
-    </div>
+  </div>
 
-    <form id="new-todo">
-      <div class="form-group">
-        <input class="form-control" type="text" name="note" placeholder="New todo item..."/>
+  <div id="app" class="container-fluid">
+    <div class="row">
+      <div id="todo-list" class="col-md">
       </div>
-      <button class="btn btn-primary" type="submit">Add</button>
-    </form>
+
+      <div id="form" class="col-md">
+        <form id="new-todo">
+          <div class="form-group">
+            <input class="form-control" type="text" name="note" placeholder="New todo item..."/>
+          </div>
+          <button class="btn btn-primary" type="submit">Add</button>
+        </form>
+      </div>
+    </div>
   </div>
 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
